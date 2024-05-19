@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 64px;
+    height: 100dvh;
+    align-content: center;
+    background-color: #aaccff;
+}
+
+.cards-container {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    gap: 16px;
+    align-content: center;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgb(0, 0, 0, .4);
+}
+
+.card {
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    align-content: center;
+    position: relative;
+    border-radius: 6px;
+    border: 4px solid rgb(0, 0, 0);
+    background-color: #00e070;
+    user-select: none;
+    transition: box-shadow .4s, transform .2s;
+}
+
+.front-card,
+.back-card {
+    position: absolute;
+    top: 8px;
+    left: 40px;
+    backface-visibility: hidden;
+    transition: transform .2s;
+}
+
+.back-card {
+    transform: perspective(256px) rotateY(180deg);
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 8px rgb(0, 0, 0, .4);
+}
+
+.card:active {
+    transform: perspective(256px) rotateY(180deg);
+}
+
+.card:active .front-card {
+    transform: perspective(256px) rotateY(180deg);
+}
+
+.card:active .back-card {
+    transform: perspective(256px) rotateY(360deg);
+}
