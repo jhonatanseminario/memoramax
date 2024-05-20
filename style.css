@@ -57,15 +57,3 @@ body {
     cursor: pointer;
     box-shadow: 0 0 8px rgb(0, 0, 0, .4);
 }
-
-.card:active {
-    transform: perspective(256px) rotateY(180deg);
-}
-
-.card:active .front-card {
-    transform: perspective(256px) rotateY(180deg);
-}
-
-.card:active .back-card {
-    transform: perspective(256px) rotateY(360deg);
-}
