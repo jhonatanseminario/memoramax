@@ -51,6 +51,8 @@ body {
 
 .back-card {
     transform: perspective(256px) rotateY(180deg);
+    position: absolute;
+    left: 16px;
 }
 
 .card:hover {
