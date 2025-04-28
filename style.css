@@ -5,65 +5,61 @@
 }
 
 body {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
+    align-content: center;
+    background:
+        repeating-radial-gradient(75% 75% at 238% 218%, #00FFFF12 30%, #073AFF14 39%),
+        radial-gradient(99% 99% at 109% 2%, #00C9FFFF 0%, #073AFF00 100%),
+        radial-gradient(99% 99% at 21% 78%, #7B00FFFF 0%, #073AFF00 100%),
+        radial-gradient(160% 154% at 711px -303px, #2000FFFF 0%, #073AFFFF 100%);
+    font-family: "Poppins", Arial, sans-serif;
     font-size: 64px;
     min-height: 100dvh;
-    align-content: center;
-    background: repeating-radial-gradient(75% 75% at 238% 218%, #00FFFF12 30%, #073AFF14 39%), radial-gradient(99% 99% at 109% 2%, #00C9FFFF 0%, #073AFF00 100%), radial-gradient(99% 99% at 21% 78%, #7B00FFFF 0%, #073AFF00 100%), radial-gradient(160% 154% at 711px -303px, #2000FFFF 0%, #073AFFFF 100%);
 }
 
 .cards-container {
-    width: 600px;
-    height: 600px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 120px);
-    gap: 16px;
     align-content: center;
-    justify-content: center;
-    border-radius: 8px;
     background-color: #fafafa;
-    box-shadow: 0 0 8px rgb(0, 0, 0, .4);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(4, 120px);
+    height: 600px;
+    justify-content: center;
+    margin: 0 auto;
+    width: 600px;
 }
 
 .card {
-    width: 120px;
-    height: 120px;
-    text-align: center;
-    align-content: center;
-    position: relative;
+    background-color: rgb(0, 224, 112);
     border-radius: 6px;
     border: 4px solid rgb(0, 0, 0);
-    background-color: #00e070;
+    height: 120px;
+    position: relative;
+    transition: box-shadow .1s, transform .1s;
     user-select: none;
-    transition: box-shadow .4s, transform .2s;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 12px 18px rgba(0, 0, 0, 0.2);
+    }
 }
 
 .front-card,
 .back-card {
+    backface-visibility: hidden;
+    font-weight: 600;
+    left: 40px;
     position: absolute;
     top: 8px;
-    left: 40px;
-    backface-visibility: hidden;
     transition: transform .2s;
 }
 
 .back-card {
-    transform: perspective(256px) rotateY(180deg);
-    position: absolute;
     left: 16px;
-}
-
-.front-card {
-    font-weight: 600;
-}
-
-.card:hover {
-    cursor: pointer;
-    box-shadow: 0 0 8px rgb(0, 0, 0, .4);
+    transform: perspective(256px) rotateY(180deg);
 }
 
 .flipped {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
 }
