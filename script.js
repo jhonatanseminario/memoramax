@@ -22,6 +22,14 @@ cardValues.sort(() => Math.random() - 0.5);
 cardValues.forEach( cardValue => {
     const card = document.createElement("div");
     card.classList.add("card");
+
+    const index = cardValues.indexOf(cardValue);
+    card.style.animationDelay = `${index * 30}ms`;
+
+    card.addEventListener("animationend", () => {
+        card.style.animation = "none";
+        card.style.animationDelay = "";
+    });
     
     const frontCard = document.createElement("div");
     frontCard.classList.add("front-card");
